@@ -7,7 +7,7 @@ import ReactStreamWrapper from '../architecture/ReactStreamWrapper'
 // Normal React Component
 const Terminal = (props) => {
   return (
-    <div>
+    <div className='fixed w-100 top-0'>
       {props.toggled ?
         <div className='dt vh-100 w-100 mw6 center'>
           <div className='dtc v-mid center w-100 mr4 ml4'>
