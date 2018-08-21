@@ -12,7 +12,20 @@ const Dispatcher = new ReplaySubject(1);
 
 const searchObject = (object, key) => {
   const split = key.split(' ')
-  const suggestions = split.reduce((prev, key) => prev[key] ? prev[key] : prev, object)
+  const suggestions = split.reduce((prev, key, index) => {
+    if (prev.terminatemmm11111111 !== true) {
+
+      return prev[key] ?
+        prev[key]
+      :
+        _.merge({}, prev, {terminatemmm11111111: true})
+    }
+    else {
+      return {}
+    }
+  }, object)
+  !_.isNil(suggestions.terminatemmm11111111)
+    ? delete suggestions.terminatemmm11111111 : null
   const last = _.last(split)
   let availableKeys = []
   Object.keys(suggestions).forEach(index => index.includes(last)
@@ -42,10 +55,10 @@ const tree = {
 // Normal React Component
 const Terminal = (props) => {
   return (
-    <div className='fixed w-100 top-0 avenir ph3'>
+    <div className='fixed w-100 top-2 avenir ph3'>
       {props.toggled ?
-        <div className='dt vh-100 w-100 mw7 center'>
-          <div className='dtc v-mid center w-100 mr4 ml4'>
+        <div className='w-100 mw7 center'>
+          <div className=' center w-100 mr4 ml4'>
             <div
               className='linusTerminal dib bg-near-white br1 pa2 w-100'>
               <div className='pr5'>
